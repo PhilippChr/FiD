@@ -1,6 +1,4 @@
-This repository contains code for:
-- Fusion-in-Decoder models
-- Distilling Knowledge from Reader to Retriever
+This repository was forked from the original FiD [repo](https://github.com/facebookresearch/FiD) and contains code for running FiD without a slurm setup and potentially on a CPU.
 
 ## Dependencies
 
