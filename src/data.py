@@ -88,11 +88,12 @@ def encode_passages(batch_text_passages, tokenizer, max_length):
     return passage_ids, passage_masks.bool()
 
 class Collator(object):
-    def __init__(self, text_maxlength, tokenizer, answer_maxlength=20):
+    def __init__(self, text_maxlength, tokenizer, logger, answer_maxlength=20):
         self.tokenizer = tokenizer
         self.text_maxlength = text_maxlength
         self.answer_maxlength = answer_maxlength
-
+        self.logger = logger
+        
     def __call__(self, batch):
         assert(batch[0]['target'] != None)
         index = torch.tensor([ex['index'] for ex in batch])
