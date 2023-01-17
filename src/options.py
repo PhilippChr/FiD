@@ -34,6 +34,8 @@ class Options():
         self.parser.add_argument('--write_results', action='store_true', help='save results')
         self.parser.add_argument('--write_crossattention_scores', action='store_true', 
                         help='save dataset with cross-attention scores')
+        self.parser.add_argument('--top_k', type=int, default=1)
+        self.parser.add_argument('--num_beams', type=int, default=50)
 
     def add_reader_options(self):
         self.parser.add_argument('--train_data', type=str, default='none', help='path of train data')
